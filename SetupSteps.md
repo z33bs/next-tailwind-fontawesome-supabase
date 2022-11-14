@@ -63,5 +63,19 @@ npm i --save @fortawesome/free-regular-svg-icons
 npm i --save @fortawesome/free-brands-svg-icons
 npm i --save @fortawesome/react-fontawesome@latest
 ```
-* -->later supabase
-* 
+* Supabase
+  * setup steps https://supabase.com/docs/guides/with-nextjs
+```
+npm install @supabase/supabase-js
+npm install @supabase/auth-helpers-react @supabase/auth-helpers-nextjs
+optional authUI for quick dev...
+npm install @supabase/auth-ui-react
+
+create .env.local and add .env* to .gitignore
+add these...
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+Wrap your pages/_app.js component with the SessionContextProvider component:
+Then setup session tracking using
+* `import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'`

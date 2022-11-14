@@ -1,9 +1,12 @@
 import Head from 'next/head'
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSmile} from "@fortawesome/free-solid-svg-icons";
-import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
+import {Auth, ThemeSupa} from "@supabase/auth-ui-react";
+import Example from "./example";
 
 export default function Home() {
+    const session = useSession()
+    const supabase = useSupabaseClient()
+
   return (
     <div>
       <Head>
@@ -11,13 +14,13 @@ export default function Home() {
         <meta name="description" content="The landing page for everyone" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <main>
-          <h1 className="text-3xl font-bold underline">
-              Testing tailwind
-          </h1>
-          <FontAwesomeIcon icon={faSmile} className="h-14"/>
-          <FontAwesomeIcon icon={faGithub} className="h-14"/>
-      </main>
+        {!session ? (
+            <div className='flex justify-center'>
+                <Auth supabaseClient={supabase} />
+            </div>
+        ) : (
+            <Example session={session} supabaseClient={supabase}/>
+        )}
     </div>
   )
 }
