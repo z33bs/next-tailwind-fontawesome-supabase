@@ -72,7 +72,7 @@ const customTheme = {
     // You can also add more theme variations with different names.
 }
 
-function LoginForm(props) {
+function SignInUpForm(props) {
     const {supabase, session} = useSupabase()
     return !session ? (
             <Auth
@@ -84,4 +84,4 @@ function LoginForm(props) {
             <SignOutButton/>)
 }
 
-export default LoginForm;
+export default SignInUpForm;

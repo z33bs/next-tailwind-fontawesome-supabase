@@ -6,7 +6,7 @@ import SignInButtonEmail from "./SignInButtonEmail";
 import SignInButtonProvider from "./SignInButtonProvider";
 import {createClient} from "./supabase-server";
 
-async function LoginLogoutButtonGroup(props) {
+async function SignInOutButtonGroup(props) {
 
     const supabase = createClient()
     const {data: {session}} = await supabase.auth.getSession()
@@ -25,4 +25,4 @@ async function LoginLogoutButtonGroup(props) {
     );
 }
 
-export default LoginLogoutButtonGroup;
+export default SignInOutButtonGroup;

@@ -3,7 +3,7 @@ import {createClient} from "../supabase/supabase-server";
 import Link from "next/link";
 import SignInButtonEmail from "../supabase/SignInButtonEmail";
 import SignInButtonProvider from "../supabase/SignInButtonProvider";
-import LoginLogoutButtonGroup from "../supabase/LoginLogoutButtonGroup";
+import SignInOutButtonGroup from "../supabase/SignInOutButtonGroup";
 
 async function Page(props) {
     const supabase = createClient()
@@ -13,7 +13,7 @@ async function Page(props) {
         <div>
         <div className="flex justify-between">
             <h1 className={'text-3xl font-bold '}>Home</h1>
-            <LoginLogoutButtonGroup/>
+            <SignInOutButtonGroup/>
 
         </div>
         <div className={'py-2'}>Warning: may need to refresh pages due to browser cache interfering / middleware not triggered</div>
