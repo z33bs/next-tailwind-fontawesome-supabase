@@ -25,7 +25,7 @@
   * empty /styles/globals.css
   * delete Home.module.css
   * can delete the hello.js api
-  * barebones index.js needed / you will replace this
+  * barebones oldindex.js needed / you will replace this
   * replace favicon
   * 
 * tailwind
