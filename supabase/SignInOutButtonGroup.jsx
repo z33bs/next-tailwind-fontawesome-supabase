@@ -1,20 +1,23 @@
-// 'use client'
-import React from 'react';
-// import {useSupabase} from "./supabase-provider";
+'use client'
+import React, {useEffect} from 'react';
+import {useSupabase} from "./supabase-provider";
 import SignOutButton from "./SignOutButton";
 import SignInButtonEmail from "./SignInButtonEmail";
 import SignInButtonProvider from "./SignInButtonProvider";
-import {createClient} from "./supabase-server";
+import {useGatedContext} from "./GatedProvider";
+import {useRouter} from "next/navigation";
 
-async function SignInOutButtonGroup(props) {
+function SignInOutButtonGroup(props) {
+    const isGated = useGatedContext()
+    const { supabase, session } = useSupabase();
+    const router = useRouter()
 
-    const supabase = createClient()
-    const {data: {session}} = await supabase.auth.getSession()
+    useEffect(()=>{
+        if(!session && isGated)
+            router.push('/bounced')
+    },[session])
 
 
-    // this `session` is from the root loader - server-side
-    // therefore, it can safely be used to conditionally render
-    // SSR pages without issues with hydration
     return session ? (
         <SignOutButton/>
     ) : (

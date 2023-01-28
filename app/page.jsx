@@ -24,8 +24,8 @@ async function Page(props) {
             https://nextjs.org/docs/api-reference/next.config.js/headers#header-overriding-behavior
          */}
         <div className={'mt-10 h-20 flex flex-col justify-between items-center'}>
-            <Link className={'underline'} href={'/loggedIn/supabaseClientComponent'}>Client Component</Link>
-            <Link className={'underline'} href={'/loggedIn/supabaseServerComponent'}>Server Component</Link>
+            <Link className={'underline'} href={'/supabaseClientComponent'}>Client Component</Link>
+            <Link className={'underline'} href={'/supabaseServerComponent'}>Server Component</Link>
         </div>
         </div>
     );

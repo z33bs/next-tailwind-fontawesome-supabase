@@ -1,6 +1,6 @@
 import React from 'react';
-import SignOutButton from "../../supabase/SignOutButton";
 import HomeLink from "../HomeLink";
+import SignInOutButtonGroup from "../../supabase/SignInOutButtonGroup";
 
 
 function ShowSessionComponent({supabase, session}) {
@@ -10,7 +10,7 @@ function ShowSessionComponent({supabase, session}) {
                 <h1 className="text-3xl font-bold underline flex items-center">
                     Session passed looks like this:
                 </h1>
-                <SignOutButton/>
+                {/*<SignInOutButtonGroup/>*/}
             </div>
             <div className={'p-20'}>
                 <HomeLink/>

@@ -5,9 +5,10 @@ import {supabaseMiddlewareRules} from "./supabase/supabase-middleware";
 
 export async function middleware(req) {
     const res = NextResponse.next()
-    console.log('middleware')
-    const supabaseRes = await supabaseMiddlewareRules(req, res)
-    supabaseRes?console.log('supabase middleware',supabaseRes):''
+    // console.log('middleware')
+    // const supabaseRes = await supabaseMiddlewareRules(req, res)
+    // supabaseRes?console.log('supabase middleware',supabaseRes):''
+    // return supabaseRes ? supabaseRes : res
 
-    return supabaseRes ? supabaseRes : res
+    return res
 }
