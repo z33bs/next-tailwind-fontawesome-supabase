@@ -10,7 +10,7 @@ function ShowSessionComponent({supabase, session}) {
                 <h1 className="text-3xl font-bold underline flex items-center">
                     Session passed looks like this:
                 </h1>
-                {/*<SignInOutButtonGroup/>*/}
+                <SignInOutButtonGroup/>
             </div>
             <div className={'p-20'}>
                 <HomeLink/>

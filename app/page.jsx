@@ -23,10 +23,10 @@ async function Page(props) {
             https://stackoverflow.com/questions/62257837/how-can-i-disable-cache-on-a-specific-page-only-in-next-js
             https://nextjs.org/docs/api-reference/next.config.js/headers#header-overriding-behavior
          */}
-        <div className={'mt-10 h-20 flex flex-col justify-between items-center'}>
-            <Link className={'underline'} href={'/supabaseClientComponent'}>Client Component</Link>
-            <Link className={'underline'} href={'/supabaseServerComponent'}>Server Component</Link>
-        </div>
+            <div className={'mt-10 h-20 flex flex-col justify-between items-center'}>
+                <Link className={'underline'} href={'/supabaseClientComponent'} prefetch={false}>Client Component</Link>
+                <Link className={'underline'} href={'/supabaseServerComponent'} prefetch={false}>Server Component</Link>
+            </div>
         </div>
     );
 }

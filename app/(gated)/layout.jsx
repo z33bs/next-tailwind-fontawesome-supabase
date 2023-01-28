@@ -1,7 +1,7 @@
 import React from 'react';
 import GatedProvider from "../../supabase/GatedProvider";
 import {createClient} from "../../supabase/supabase-server";
-import SignInOutButtonGroup from "../../supabase/SignInOutButtonGroup";
+import GateTrojan from "../../supabase/GateTrojan";
 
 async function Layout({children}) {
     const supabase = createClient()
@@ -10,7 +10,7 @@ async function Layout({children}) {
         <GatedProvider>
             <div className={' w-screen border border-black'}>
                 <div className={'absolute top-0 right-0'}>
-                    <SignInOutButtonGroup/>
+                    <GateTrojan/>
                 </div>
                 {session && children}
             </div>
