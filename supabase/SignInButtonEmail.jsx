@@ -6,7 +6,8 @@ import {useSupabase} from "./supabase-provider";
 function SignInButtonEmail({
     children=(<p>Email Sign In</p>),
     email = 'abc@abc.com',
-    password = 'password'
+    password = 'password',
+    onSuccess=()=>null,
 }) {
     const { supabase, session } = useSupabase();
 
@@ -22,6 +23,9 @@ function SignInButtonEmail({
         if (error) {
             console.log({ error });
         }
+
+        if(data.session)
+            onSuccess()
     };
 
     return (

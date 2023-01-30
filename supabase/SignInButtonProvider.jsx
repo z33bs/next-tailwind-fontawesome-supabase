@@ -4,7 +4,8 @@ import {useSupabase} from "./supabase-provider";
 
 function SignInButtonProvider({
     provider='github',
-    children = (<p>{provider} Sign In</p>)
+    children = (<p>{provider} Sign In</p>),
+    onSuccess=()=>null,
   }) {
     const { supabase, session } = useSupabase()
 
@@ -15,6 +16,8 @@ function SignInButtonProvider({
 
         if (error) {
             console.log({ error });
+        } else {
+            onSuccess()
         }
     }
 

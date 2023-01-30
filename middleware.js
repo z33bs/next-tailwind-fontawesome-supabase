@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import {supabaseMiddlewareRules} from "./supabase/supabase-middleware";
+import {supabaseMiddlewareRules} from "./supabase/depreciated/supabase-middleware";
 
 //see https://nextjs.org/docs/advanced-features/middleware
 

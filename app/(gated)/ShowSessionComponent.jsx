@@ -2,8 +2,8 @@ import React from 'react';
 import HomeLink from "../HomeLink";
 import SignInOutButtonGroup from "../../supabase/SignInOutButtonGroup";
 
-
 function ShowSessionComponent({supabase, session}) {
+
     return (
         <main>
             <div className="flex justify-between">

@@ -16,16 +16,11 @@ async function Page(props) {
             <SignInOutButtonGroup/>
 
         </div>
-        <div className={'py-2'}>Warning: may need to refresh pages due to browser cache interfering / middleware not triggered</div>
-        {/* todo solve inconsistent gating
-            browser not triggering middleware without refresh
-            trying... not work... handle gating without middleware? context?
-            https://stackoverflow.com/questions/62257837/how-can-i-disable-cache-on-a-specific-page-only-in-next-js
-            https://nextjs.org/docs/api-reference/next.config.js/headers#header-overriding-behavior
-         */}
             <div className={'mt-10 h-20 flex flex-col justify-between items-center'}>
-                <Link className={'underline'} href={'/supabaseClientComponent'} prefetch={false}>Client Component</Link>
-                <Link className={'underline'} href={'/supabaseServerComponent'} prefetch={false}>Server Component</Link>
+                <Link className={'underline'} href={'/supabaseClientComponent'} prefetch={false}>Gated client Component</Link>
+                <Link className={'underline'} href={'/supabaseServerComponent'} prefetch={false}>Gated server Component</Link>
+                <Link className={'underline'} href={'/bounced'} >Login (old bounced)</Link>
+                <Link className={'underline'} href={'/secure/sensitive'} prefetch={false}>Secure Page</Link>
             </div>
         </div>
     );
