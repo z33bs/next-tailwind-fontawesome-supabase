@@ -21,6 +21,7 @@ async function Page(props) {
                 <Link className={'underline'} href={'/supabaseServerComponent'} prefetch={false}>Gated server Component</Link>
                 <Link className={'underline'} href={'/bounced'} >Login (old bounced)</Link>
                 <Link className={'underline'} href={'/secure/sensitive'} prefetch={false}>Secure Page</Link>
+                <Link className={'underline'} href={'/fontawesome'} >FontAwesome</Link>
             </div>
         </div>
     );

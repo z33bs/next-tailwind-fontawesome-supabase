@@ -4,6 +4,7 @@ import {Auth, ThemeMinimal} from "@supabase/auth-ui-react";
 import {useSupabase} from "./supabase-provider";
 import SignOutButton from "./SignOutButton";
 
+//todo Add CAPTCHA - https://supabase.com/docs/guides/auth/auth-captcha
 
 const customTheme = {
     default: {
